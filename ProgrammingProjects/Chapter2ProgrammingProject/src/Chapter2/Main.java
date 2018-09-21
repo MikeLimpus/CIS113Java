@@ -3,9 +3,6 @@
  * Chapter 2 Programming Project
  * Write a program that calculates & outputs the average of integers 1, 7, 9, and 34
  * */
-
-package Chapter2;
-
 public class Main {
 
     public static void main(String[] args) {
