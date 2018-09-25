@@ -28,6 +28,5 @@ public class Chapter3ProgrammingProject {
         //Calculate the total amount of money to a single floating point variable
         total = (quarter * amountQuarters) + (dime * amountDimes) + (nickel * amountNickels);
         System.out.println("The total is: " + dollars.format(total));
-
     }
 }

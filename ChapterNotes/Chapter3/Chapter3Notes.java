@@ -78,18 +78,35 @@ public class Chapter3Notes {
          */
 
         Random generator = new Random(); 
-        System.out.println("A random number between 0 & 99: " + generator.nextInt(99));
+        System.out.println("A random number between 0 & 99: " + generator.nextInt(100));
+        System.out.println("A random number between 1 & 100: " + (generator.nextInt(100) + 1));
+        System.out.println("A random number between 20 & 30: " + (generator.nextInt(30 - 20 + 1) + 20));
         
         /* 
          * Scanner Class
          * Allows for user inputs
          */ 
-        Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in); // Instantiation
 
         // Prompt for input
         System.out.println("Please enter a number: " );
+        // Declare a number to store the number from the keyboard
         int inputNumber = keyboard.nextInt();
 
         System.out.println("You entered " + inputNumber);
+
+        //Prompt for char
+        System.out.println("Please enter a character: ");
+        String inputLetter = keyboard.next();
+        System.out.println("You entered: " + inputLetter);
+        //Prompt for word
+        System.out.println("Please enter a word: ");
+        String inputWord = keyboard.next();
+        System.out.println("You entered: " + inputWord);
+        inputWord = keyboard.nextLine(); //This prevents \n character from overflowing to next input from .next()
+        //Accepts input until newline
+        System.out.println("Please enter words: ");
+        String inputString = keyboard.nextLine();
+        System.out.println("You entered: " + inputString);
     }
 }
