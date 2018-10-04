@@ -1,6 +1,8 @@
-/*
- * Jonathan Limpus
- * Chapter 3 Practice 
+/**
+ * @author  Mike Limpus
+ * @version 1.0
+ * @since   0.1
+ * 
  */
 
 import java.util.Scanner;
