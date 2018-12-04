@@ -31,4 +31,10 @@ public class Ranger extends Player {
     public void setStealth(int stealth) {
         this.stealth = stealth;
     }
+    
+    @Override
+    public void print() {
+        System.out.println("Name: " + playerName + "\nHP: " + healthPoints);
+        System.out.println("Job: Ranger\nSpeed: " + speed + "\nStealth: " + stealth);
+    }
 }

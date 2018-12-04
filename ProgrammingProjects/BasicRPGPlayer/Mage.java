@@ -25,4 +25,10 @@ public class Mage extends Player {
     public void setCastTime(int castTime) {
         this.castTime = castTime;
     }
+    
+    @Override
+    public void print() {
+        System.out.println("Name: " + playerName + "\nHP: " + healthPoints);
+        System.out.println("Job: Mage\nMP: " + magicPoints + "\nRecast " + castTime);
+    }
 }

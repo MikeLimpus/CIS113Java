@@ -20,10 +20,22 @@ public abstract class Player {
     }
 
     // Accessors and Mutators
-    public String getName() {return playerName;}
-    public int getHealth() {return healthPoints;}
-    public void setName(String playerName) {this.playerName = playerName;}
-    public void setHealth(int healthPoints) {this.healthPoints = healthPoints;}
+    public String getName() {
+        return playerName;
+    }
+    public int getHealth() {
+        return healthPoints;
+    }
+    public void setName(String playerName) {
+        this.playerName = playerName;
+    }
+    public void setHealth(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public void print() {
+        System.out.println("Name: " + playerName + "\nHP: " + healthPoints);
+    }
 
     
 }

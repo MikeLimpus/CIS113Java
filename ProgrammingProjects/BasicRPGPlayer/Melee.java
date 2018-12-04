@@ -19,8 +19,21 @@ public class Melee extends Player {
         this.endurance = endurance;
     }
 
-    public int getStrength() {return strength;}
-    public int getEndurance() {return endurance;}
-    public void setStrength(int strength) {this.strength = strength;}
-    public void setEndurance(int endurance) {this.endurance = endurance;}
+    public int getStrength() {
+        return strength;
+    }
+    public int getEndurance() {
+        return endurance;
+    }
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+    public void setEndurance(int endurance) {
+        this.endurance = endurance;
+    }
+    @Override
+    public void print() {       
+        System.out.println("Name: " + playerName + "\nHP: " + healthPoints);
+        System.out.println("Job: Warrior\nStrength: " + strength + "\nEndurance: " + endurance);
+    }
 }
