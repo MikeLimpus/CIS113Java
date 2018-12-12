@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class NewYahtzee {
     public static void main(String args[]) {
+        // Local variables
         int[] dice = new int[5];
         int[] keep = new int[5]; 
         int diceTotal = 0;
@@ -44,6 +45,11 @@ public class NewYahtzee {
             }
         }
 
+        dice[0] = 1;
+        dice[1] = 2;
+        dice[2] = 3;
+        dice[3] = 4;
+        dice[4] = 5;
         // Check for matches 
 
         // Find the dice total in case of 3 or 4 of a kind 
@@ -80,8 +86,17 @@ public class NewYahtzee {
             }
         }
 
+
+        //Check for a straight first
+        /*if (straight(dice) == 1) {
+            System.out.print("Low Straight! You scored 30 points \n");
+        }
+        else if(straight(dice) == 2) {
+            System.out.print("High Straight! You scored 40 points\n");
+        }*/
+
         //Determine to see if any higher matches are greater in number than lower matches 
-        if(numberOfMatchesHigh > numberOfMatchesLow) {
+       else if(numberOfMatchesHigh > numberOfMatchesLow) {
             switch(numberOfMatchesHigh) {
                 case 4:
                     System.out.print("Yahtzee! You scored 50 points!\n");
@@ -138,11 +153,26 @@ public class NewYahtzee {
                 if(sortArray[insideIndex] < sortArray[smallestIndex])
                     smallestIndex = insideIndex;
             }
-            System.out.print("Switching " + sortArray[outsideIndex] + " with " + sortArray[smallestIndex]);
             temporaryInt = sortArray[outsideIndex];
             sortArray[outsideIndex] = sortArray[smallestIndex];
             sortArray[smallestIndex] = temporaryInt;
         }
+    }
 
+    public static int straight(int arr[]) {
+        int straightCount = 0;
+        sort(arr);
+        for(int i = 0; i < 4; i++) {
+            int j = i++; // Next index
+            if(arr[j] == (arr[i] - 1)) {
+                straightCount++;
+            }
+        }
+        if (straightCount == 4) // Low straight
+            return 1;
+        if (straightCount == 5) // High straight
+            return 2;
+        else  
+            return 0;
     }
 }
