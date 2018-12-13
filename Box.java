@@ -5,19 +5,21 @@
  */
 
 
-public class Box {
+public class Box extends Shapes {
 	private double height, width, depth, volume;
 	
 	public Box() {
 		//This is the default constructor for Box
+		super();
 		height = 0.0;
 		width = 0.0;
 		depth = 0.0;
 		calculateVolume();
 	}
 	
-	public Box(double height, double width, double depth) {
+	public Box(double xPos, double yPos, double zPos, double scale, double height, double width, double depth) {
 		//This is the parameterized constructor
+		super(xPos, yPos, zPos, scale);
 		this.height = height;
 		this.width = width;
 		this.depth = depth;
@@ -54,13 +56,24 @@ public class Box {
 		volume = height * width * depth;
 	}
 	
-	public void printAll() {
+	@Override 
+	public void print() {
 		//Debug function to print every data field in class
-		System.out.print(
+		super.print();
+		System.out.println(
 			"\nHeight = " + height +
 			"\nWidth = " + width +
 			"\nDepth = " + depth +
-			"\nVolume = " + volume
+			"\nVolume = " + volume +"\n" 
  			);
+	}
+	
+	@Override
+	public void setScale(double scale) {
+		this.scale = scale;
+		height *= scale;
+		width *= scale;
+		depth *= scale;
+		calculateVolume();
 	}
 }
